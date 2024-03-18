@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - College Student Information System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<body>
+    <header>
+        <h1>College Student Information System</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="add.html">Add Student Data</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>You can contact us using the form below:</p>
+        <form action="#" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="submit" value="Send Message">
+        </form>
+        <p>Your response will be highly appreciated. Thank you!</p>
+        <div class="developer-info">
+            <h3>Developer Contact:</h3>
+            <p>Email: priyanshusolon2001@gmail.com</p>
+            <p>Phone: 7759959568</p>
+        </div>
+    </div>
+</body>
+</html>
