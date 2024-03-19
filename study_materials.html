@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials - College Student Information System</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>College Student Information System</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="add.html">Add Student Data</a>
+        <a href="study_materials.html">Study Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="container">
+        <h2>Study Materials</h2>
+        <label for="department">Select Department:</label>
+        <select id="department" onchange="showStudyMaterials(this.value)">
+            <option value="option">Select Option</option>
+            <option value="cse">Computer Science and Engineering</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="eee">Electrical and Electronics Engineering</option>
+            <option value="civil">Civil Engineering</option>
+        </select>
+        <div id="study-materials-table">
+            <!-- Placeholder for study materials table -->
+        </div>
+    </div>
+
+    <!-- Study materials tables (hidden by default) -->
+    <table id="cse-materials" class="study-materials-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data Structures</td>
+                <td><a href="https://www.youtube.com/watch?v=RBSGKlAvoiM&list=PLWKjhJtqVAbkso-IbgiiP48n-O-JQA9PJ">Link</a></td>
+            </tr>
+            <tr>
+                <td>Database Management Systems</td>
+                <td><a href="https://www.youtube.com/watch?v=ztHopE5Wnpc&list=PLWKjhJtqVAbnqBxcdjVGgT3uVR10bzTEB">Link</a></td>
+            </tr>
+            <tr>
+                <td>Object-Oriented Programming</td>
+                <td><a href="https://www.youtube.com/watch?v=PFmuCDHHpwk&list=PLWKjhJtqVAbmfoj2Th9fvxhHIeqFO7wOy">Link</a></td>
+            </tr>
+            <tr>
+                <td>C++ Programming</td>
+                <td><a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y&list=PLWKjhJtqVAblfum5WiQblKPwIbqYXkDoC">Link</a></td>
+            </tr>
+            <tr>
+                <td>Java Programming</td>
+                <td><a href="https://www.youtube.com/watch?v=eIrMbAQSU34&list=PLWKjhJtqVAblVUxMVe-5gmmiid8SJsfcf">Link</a></td>
+            </tr>
+            <tr>
+                <td>Python Programming</td>
+                <td><a href="https://www.youtube.com/watch?v=rfscVS0vtbw&list=PLWKjhJtqVAbnqBxcdjVGgT3uVR10bzTEB">Link</a></td>
+            </tr>
+            <tr>
+                <td>Networking</td>
+                <td><a href="https://www.youtube.com/watch?v=nWVVbJwHyZM&list=PLWKjhJtqVAblP2OmFmcNSFUMYG-4BdKyP">Link</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function showStudyMaterials(department) {
+            // Hide all study materials tables
+            const tables = document.getElementsByClassName("study-materials-table");
+            for (let i = 0; i < tables.length; i++) {
+                tables[i].style.display = "none";
+            }
+
+            // Show the selected department's study materials table
+            const departmentTable = document.getElementById(`${department}-materials`);
+            if (departmentTable) {
+                departmentTable.style.display = "table";
+            }
+        }
+    </script>
+</body>
+</html>
