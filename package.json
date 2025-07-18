@@ -18,6 +18,10 @@
   "homepage": "https://github.com/priyanshu-solon/CollegeStudentInformation#readme",
   "description": "",
   "dependencies": {
-    "bootstrap-icons": "^1.11.3"
+    "@babel/standalone": "^7.28.1",
+    "bootstrap": "^5.3.7",
+    "bootstrap-icons": "^1.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
