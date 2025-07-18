@@ -24,4 +24,4 @@
     homeHeading.style.display = 'block';
     homeDescription.style.display = 'block';
     studentTable.style.display = 'none';
-    
+  }
