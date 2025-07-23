@@ -1,235 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Student Information System</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Website</title>
 
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- <script src="node_modules/react/umd/react.development.js"></script>
-    <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
-    <script src="node_modules/babel/standalone.js"></script> -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./src/styles/styles.css">
-     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script type="text/babel">
-
-        const Header = () => (
-            <header>
-                <h1 className="d-flex justify-content-center p-4 mb-0">College Student Information System</h1>
-            </header>
-        );
-
-        const Dropdown = ({ title, items }) => (
-            <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                    {title}
-                </a>
-                <ul className="dropdown-menu">
-                    {items.map((item, idx) => (
-                        <li key={idx}><a className="dropdown-item" href={item.href || "#"}>{item.label}</a></li>
-                    ))}
-                </ul>
-            </li>
-        );
-
-        const Navbar = () => {
-            const dropdowns = [
-                {
-                    title: "About Us",
-                    items: [
-                        { label: "History" }, { label: "Principal's Message" }, { label: "Vision & Mission" },
-                        { label: "Administration" }, { label: "Affiliation" }, { label: "Audit Report" },
-                        { label: "Visit Us" }, { label: "Contact Us" }
-                    ]
-                },
-                {
-                    title: "Academics",
-                    items: [
-                        { label: "Admission" }, { label: "Academic Regulation" }, { label: "Academic Calendar" },
-                        { label: "List of Holidays" }, { label: "Attendance" }, { label: "Committee" },
-                        { label: "Time Table" }, { label: "Faculty" }, { label: "Syllabus" },
-                        { label: "Disciplinary Rule" }, { label: "Anti Ragging" }, { label: "Gender Discrimination" },
-                        { label: "Course Offered" }, { label: "Research & Development" }, { label: "Institute News Letter" }
-                    ]
-                },
-                {
-                    title: "Department",
-                    items: [
-                        { label: "Computer Science and Engineering" }, { label: "Electrical Engineering" },
-                        { label: "Mechanical Engineering" }, { label: "Civil Engineering" },
-                        { label: "Applied Science & Humanities" }
-                    ]
-                },
-                {
-                    title: "Services",
-                    items: [
-                        { label: "Computer Center" }, { label: "Central Library" }, { label: "Hostels" },
-                        { label: "Sports Facilities" }, { label: "Medical Center" }, { label: "Guest House" },
-                        { label: "Gymnasium" }, { label: "Bank" }, { label: "Club" }, { label: "Wi-Fi" }
-                    ]
-                },
-                {
-                    title: "Placements",
-                    items: [
-                        { label: "About Placement" }, { label: "Placement Brochure" },
-                        { label: "Placement List" }, { label: "TPO" }
-                    ]
-                },
-                {
-                    title: "Gallery",
-                    items: [
-                        { label: "Image Galleries" }, { label: "Video Galleries" },
-                        { label: "Media Galleries" }, { label: "Events" }
-                    ]
-                }
-            ];
-
-            return (
-                <nav className="navbar navbar-expand bg-primary">
-                    <div className="container-fluid justify-content-center">
-                        <div className="collapse navbar-collapse justify-content-center">
-                            <ul className="navbar-nav gap-2">
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="index.html">
-                                        <i className="bi bi-house"></i> Home
-                                    </a>
-                                </li>
-                                {dropdowns.map((d, i) => (
-                                    <Dropdown key={i} title={d.title} items={d.items} />
-                                ))}
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">Contact</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">Login</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-            );
-        };
-
-        const StudentTable = ({ students }) => (
-            <>
-                <h2 className="mx-4">Student Information</h2>
-                <div className="row mx-4 fw-bold">
-                    <div className="col">Roll Number</div>
-                    <div className="col">Name</div>
-                    <div className="col">Stream</div>
-                    <div className="col">Academic Performance</div>
-                    <div className="col">Coding Profile</div>
-                </div>
-                {students.map((s, idx) => (
-                    <div className="row mx-4" key={idx}>
-                        <div className="col">{s.roll}</div>
-                        <div className="col">{s.name}</div>
-                        <div className="col">{s.stream}</div>
-                        <div className="col">{s.performance}</div>
-                        <div className="col">{s.profile}</div>
-                    </div>
-                ))}
-            </>
-        );
-
-        const AddStudentForm = ({ onAdd }) => {
-            const [formData, setFormData] = React.useState({
-                roll: '', name: '', stream: '', performance: '', profile: ''
-            });
-
-            const fields = [
-                { label: 'Roll Number', name: 'roll', type: 'text' },
-                { label: 'Name', name: 'name', type: 'text' },
-                { label: 'Stream', name: 'stream', type: 'text' },
-                { label: 'Academic Performance', name: 'performance', type: 'number' },
-                { label: 'Coding Profile', name: 'profile', type: 'text' }
-            ];
-
-            const handleChange = e => {
-                setFormData({ ...formData, [e.target.name]: e.target.value });
-            };
-
-            const handleSubmit = e => {
-                e.preventDefault();
-                onAdd(formData);
-                setFormData({ roll: '', name: '', stream: '', performance: '', profile: '' });
-            };
-
-            return (
-                <>
-                    <h2 className="mx-4 mt-4">Add Student</h2>
-                    <form className="d-flex justify-content-center align-items-center" onSubmit={handleSubmit}>
-                        <div className="w-100 mx-4">
-                            {fields.map(({ label, name, type }) => (
-                                <div key={name}>
-                                    <label className="form-label">{label}:</label>
-                                    <input
-                                        className="form-control"
-                                        name={name}
-                                        type={type}
-                                        value={formData[name]}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </div>
-                            ))}
-                            <input className="btn btn-primary my-2" type="submit" value="Add Student" />
-                        </div>
-                    </form>
-                </>
-            );
-        };
-
-
-        const App = () => {
-            const [students, setStudents] = React.useState([
-                { roll: '1', name: 'John Doe', stream: 'Computer Science', performance: '85', profile: 'Github: johndoe' },
-                { roll: '2', name: 'John Wick', stream: 'Mechanical', performance: '75', profile: 'Github: johnwick' }
-            ]);
-
-            const addStudent = student => {
-                setStudents(prev => [...prev, student]);
-            };
-
-            return (
-                <div>
-                    <Header />
-                    <Navbar />
-                    <div className="container my-5">
-                        <div className="bg-light shadow rounded p-4">
-                            <StudentTable students={students} />
-                            <hr className="my-4" />
-                            <AddStudentForm onAdd={addStudent} />
-                        </div>
-                    </div>
-                </div>
-            );
-        };
-
-        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-
-    </script>
+</head>
 
 <body>
-
-    <div id="root"></div>
-
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
